@@ -35,4 +35,12 @@ describe('Homepage Controller', () => {
       expect(res.send).toHaveBeenCalled();
     });
   });
+
+  describe('Guest List', () => {
+    it('sends guest data', () => {
+      controller = HomepageController.GuestList(memberModelMock);
+      controller(req, res);
+      expect(res.send).toHaveBeenCalled();
+    });
+  });
 });
