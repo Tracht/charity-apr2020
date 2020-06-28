@@ -30,19 +30,16 @@ var HomepageController = {
     });
   },
 
-  GuestList: (request, response) => {
+  GuestList: (memberModel) => (request, response) => {
     let guests = [];
 
-    Member.find((err, result) => {
-      // console.log(result)
+    memberModel.find((err, result) => {
       result.forEach((member) => {
 
         if(member.role === 'guest'){
           guests.push(member);
         }
       });
-      // console.log("Guests only")
-      // console.log(guests)
       response.send(guests);
     });
   },
