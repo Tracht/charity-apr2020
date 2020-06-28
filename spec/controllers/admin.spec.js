@@ -3,7 +3,7 @@ let AdminController = require("../../controllers/admin");
 describe('Admin Controller', () => {
   describe('Login', () => {
     it('sends database error', () => {
-      
+
       var mockAdminModel = {
         findOne: (query, callback) => {
           var err = {body: 'error'};
@@ -20,7 +20,10 @@ describe('Admin Controller', () => {
       controller = AdminController.Login(mockAdminModel);
       controller(req, res);
 
-      expect(res.send).toHaveBeenCalled();
+      expect(res.send).toHaveBeenCalledWith({
+        success: false,
+        message: "Datebase error",
+      });
     });
   });
 });
