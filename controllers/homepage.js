@@ -16,19 +16,16 @@ var HomepageController = {
     });
   },
 
-  DriverList: (request, response) => {
+  DriverList: (memberModel) => (request, response) => {
     let drivers = [];
 
-    Member.find((err, result) => {
-      // console.log(result)
+    memberModel.find((err, result) => {
       result.forEach((member) => {
 
         if(member.role === 'driver'){
           drivers.push(member);
         }
       });
-      // console.log("Drivers only")
-      // console.log(drivers)
       response.send(drivers);
     });
   },
