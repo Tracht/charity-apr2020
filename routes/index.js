@@ -1,15 +1,8 @@
 var express = require('express');
 var router = express.Router();
-var HomepageController = require('../controllers/homepage');
-var Member = require('../models/member');
+var IndexController = require('../controllers/index');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index');
-});
-
-router.get('/drivers', HomepageController.DriverList(Member));
-router.get('/guests', HomepageController.GuestList(Member));
-router.post('/createMember', HomepageController.CreateMember(Member));
+router.get('/', IndexController.Index);
 
 module.exports = router;
