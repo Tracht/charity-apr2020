@@ -43,4 +43,18 @@ describe('Homepage Controller', () => {
       expect(res.send).toHaveBeenCalled();
     });
   });
+
+  describe('Create Member', () => {
+    it('saves a new member to the database', () => {
+      memberModelMock = jest.fn();
+      var saveMock = jest.fn();
+      memberModelMock.mockImplementation(() => {
+        return {save: saveMock}
+      });
+      req.body = {name: 'Paula', role: 'guest', address: 'N8 2AA'}
+      controller = HomepageController.CreateMember(memberModelMock);
+      controller(req, res);
+      expect(saveMock).toHaveBeenCalled();
+    });
+  });
 });
