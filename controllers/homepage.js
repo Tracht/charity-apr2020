@@ -1,10 +1,8 @@
-var Member = require('../models/member');
-
 var HomepageController = {
 
-  CreateMember: (request, response) => {
+  CreateMember: (memberModel) => (request, response) => {
 
-    var member = new Member({
+    var member = new memberModel({
       name: request.body.name,
       role: request.body.role,
       address: request.body.address
