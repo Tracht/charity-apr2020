@@ -32,7 +32,7 @@ class DriverList extends React.Component {
   };
 
   delete = (e) => {
-    console.log(document.getElementById("delete").value);
+    console.log(document.getElementById("").value);
     // e.preventDefault();
     // const driverid = {
     //   driverid: d
