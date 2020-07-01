@@ -5,12 +5,23 @@ var HomepageController = {
     var member = new memberModel({
       name: request.body.name,
       role: request.body.role,
-      address: request.body.address
+      address: request.body.address,
+      availability: { },
     });
+
 
     member.save((err) => {
       if (err) { console.log(err) }
       // sendFlashMessage(response, request, '/', 'Member saved!');
+      response.send({message: "ok"});
+    });
+  },
+
+  DeleteMember: (memberModel) => (request, response) => {
+    console.log("we are in delete member function")
+    var id = request.body.id;
+    memberModel.deleteOne({"_id" : id}, function(err){
+      if(err) { throw err; }
     });
   },
 
@@ -40,7 +51,8 @@ var HomepageController = {
       });
       response.send(guests);
     });
-  },
+  }
+
 }
 
 // var sendFlashMessage = (response, request, route, message) => {

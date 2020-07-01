@@ -1,57 +1,28 @@
 class DriverList extends React.Component {
 
-  constructor() {
-    super();
-    this.state = {
-      drivers: [],
-    };
-  };
-
-  componentDidMount() {
-    this.fetchDrivers('/drivers');
-  }
-
-  fetchDrivers = () => {
-    fetch('/drivers')
-    .then(response => response.json())
-    .then((data) => {
-      this.setState({
-        drivers: data,
-      });
-      this.setState({
-        drivers: this.sortDriversAtoZ(),
-      });
-      
-    });
-  }
-
-  sortDriversAtoZ = () => {
-    return this.state.drivers.sort(function(memberA, memberB) {
-    var memberA = memberA.name.toUpperCase();
-    var memberB = memberB.name.toUpperCase();
-      return (memberA < memberB) ? -1 : (memberA > memberB) ? 1 : 0;
-    });
-  }
-
   render() {
     return(
       <div>
         <h2>List of Drivers</h2>
-        <table className="driver-list">
-          <thead>
-            <tr>
-              <th></th>
-              <th>Name</th>
-              <th>Address</th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.state.drivers.map((driver) => (
-              < Driver name={driver.name} address={driver.address} id={driver._id} key={driver._id} />
+        <div className="driver-list col-5">
+          <div className="headers row">
+              <div className="name">Name</div>
+              <div className="address">Address</div>
+          </div>
+            {this.props.drivers.map((driver, index) => (
+              
+              < Driver 
+                name={driver.name} 
+                address={driver.address} 
+                index={index} 
+                id={driver._id} 
+                key={driver._id} 
+                deleteMember={this.props.deleteMember}
+              />
               ))
+            
             }
-          </tbody>
-        </table>
+        </div>
       </div>
     )
   }
