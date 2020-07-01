@@ -20,7 +20,7 @@ var HomepageController = {
   DeleteMember: (memberModel) => (request, response) => {
     console.log("we are in delete member function")
     var id = request.body.id;
-    memberModel.deleteOne({"_id" : id}, function(err){
+    memberModel.findByIdAndRemove({"_id" : id}, (err) => {
       if(err) { throw err; }
     });
   },

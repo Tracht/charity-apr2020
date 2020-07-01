@@ -57,4 +57,18 @@ describe('Homepage Controller', () => {
       expect(saveMock).toHaveBeenCalled();
     });
   });
+
+  describe('Delete Member', () => {
+    it('deletes a member from the database', () => {
+      memberModelMock = jest.fn();
+      var deleteOneMock = jest.fn();
+      memberModelMock.mockImplementation(() => {
+        return {findByIdAndRemove: deleteOneMock}
+      });
+      req.body = {id: '1'}
+      controller = HomepageController.DeleteMember(memberModelMock);
+      controller(req, res);
+      expect(deleteOneMock).toHaveBeenCalled();
+    });
+  });
 });
