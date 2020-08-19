@@ -27,7 +27,7 @@ AveragePairs.generate = (members) => {
     // clone guests for mutation
     guestClone = _.clone(this.guests);
 
-    for(var j = 0; j < this.guests.length-1; j++) {
+    for(var j = 0; j < this.guests.length; j++) {
       var pairing = {
         pairs: []
       };
