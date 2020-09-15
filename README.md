@@ -2,6 +2,15 @@
 ## [Re-Engage Portal](https://charity2020.herokuapp.com/admin/login)
 This tool helps volunteer coordinators for Re-Engage. Re-Engage is a charity that organises tea parties for elderly members in the community to address isolation and loneliness. 
 
+### Snapshots of the website
+<img width="451" alt="Re-engage - login" src="https://user-images.githubusercontent.com/28805811/87242430-8657f700-c424-11ea-9d4b-09bfb1fae83f.png">
+
+<img width="451" alt="Re-Engage - Members" src="https://user-images.githubusercontent.com/28805811/87242454-b56e6880-c424-11ea-9c95-41b95529b4d0.png">
+
+<img width="451" alt="Re-engage - Pairing" src="https://user-images.githubusercontent.com/28805811/87242457-b8695900-c424-11ea-91e9-d43b7cf16b5a.png">
+
+<img width="451" alt="Re-engage - Edit" src="https://user-images.githubusercontent.com/28805811/87242462-bdc6a380-c424-11ea-9c38-f0f4346864a3.png">
+
 **Background**: Each month, a driver from a group of volunteers is matched with an elderly guest, with drivers and guests who live close to one another being paired preferentially. Drivers then pick up and drop off their assigned guest at a central location where the charity runs a tea party. 
 
 **Problem**: Driver/Guest pairings are often different each month based on the participants' changing schedules. Coordinating everyone involved was done manually using spreadsheets and required a substantial number of hours to complete, with the shortest guest/driver pairs being created by looking up participants' addresses in Google Maps and eyeballing the best pairings. 
@@ -153,12 +162,3 @@ I would like to see a map of the pairs in the table
 
 [1]: https://travis-ci.org/Tracht/charity-apr2020.svg?branch=master
 [2]: https://github.com/Tracht/charity-apr2020/wiki/Product-Spec
-
-### Snapshots of the website
-<img width="451" alt="Re-engage - login" src="https://user-images.githubusercontent.com/28805811/87242430-8657f700-c424-11ea-9d4b-09bfb1fae83f.png">
-
-<img width="451" alt="Re-Engage - Members" src="https://user-images.githubusercontent.com/28805811/87242454-b56e6880-c424-11ea-9c95-41b95529b4d0.png">
-
-<img width="451" alt="Re-engage - Pairing" src="https://user-images.githubusercontent.com/28805811/87242457-b8695900-c424-11ea-91e9-d43b7cf16b5a.png">
-
-<img width="451" alt="Re-engage - Edit" src="https://user-images.githubusercontent.com/28805811/87242462-bdc6a380-c424-11ea-9c38-f0f4346864a3.png">
